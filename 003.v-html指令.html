@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <div v-html='m'></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 由于v-html会解析标签,碰到img的src引入的资源不存在,会触发自身的onerror事件,攻击者可以在事件处理程序里面做一些事情 ,例如:获取网站的信息发送到自己服务器上面
+        const vm = new Vue({
+            el: '#a',
+            data: {
+                m: `<img src='xxx' onerror="alert('什么破网站😭!')">`
+            }
+        })
+    </script>
+</body>
+
+</html>

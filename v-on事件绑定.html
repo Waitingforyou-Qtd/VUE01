@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{n}}</div>
+        <div>
+            <!-- 当点击按钮时,会发生递增 -->
+            <button v-on:click='n++'>按钮①</button></button>
+            <button @click='n++'>按钮②</button>
+            <button @click='h'>按钮③</button>
+            <button @click='h()'>按钮④</button>
+        </div>
+    </div>
+    <script type="text/JavaScript" src="vue.js"></script>
+    <script type="text/JavaScript">
+        const vm = new Vue({
+            el:'#app',
+    data: {
+        n: 0,
+    },
+    methods: {
+        h:function(){
+            // 这里this指的是vue的实例对象vm
+            this.n++
+        }
+    },
+});
+    </script>
+</body>
+
+</html>

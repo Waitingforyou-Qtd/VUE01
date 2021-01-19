@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .tab ul {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab ul li {
+            box-sizing: border-box;
+            padding: 0;
+            float: left;
+            width: 100px;
+            height: 45px;
+            line-height: 45px;
+            list-style: none;
+            text-align: center;
+            border-top: 1px solid blue;
+            border-right: 1px solid blue;
+            cursor: pointer;
+        }
+
+        .tab ul li:first-child {
+            border-left: 1px solid blue;
+            cursor: pointer;
+        }
+
+        .tab ul li.active {
+            background-color: orange;
+        }
+
+        .tab div {
+            width: 500px;
+            height: 300px;
+            display: none;
+            text-align: center;
+            font-size: 30px;
+            line-height: 300px;
+            border: 1px solid blue;
+            border-top: 0px;
+            cursor: pointer;
+        }
+
+        .tab div.current {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="a">
+        <div class="tab">
+            <ul>
+                <!-- ?:判断是否为真 与当前元素进行对比-->
+                <!-- change(index)遍历时候的下标 -->
+                <li v-on:click='change(index)' :class='cuIndex==index?"active":" "' :key='item.id'
+                    v-for='(item,index) in list'>{{item.title}}</li>
+            </ul>
+            <div :class='cuIndex==index?"current":""' :key='item.id' v-for='(item,index) in list'>
+                <img :src="item.path">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#a',
+            data: {
+                cuIndex: 0, // 选项卡当前的下标
+                list: [{
+                    id: 1,
+                    title: 'apple',
+                    path: 'img/apple.png'
+                }, {
+                    id: 2,
+                    title: 'orange',
+                    path: 'img/orange.png'
+                }, {
+                    id: 3,
+                    title: 'lemon',
+                    path: 'img/lemon.png'
+                }]
+            },
+            methods: {
+                change: function (index) {
+                    // 选项卡切换
+                    // this指的是当前元素
+                    this.cuIndex = index;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

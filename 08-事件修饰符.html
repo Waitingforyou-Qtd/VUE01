@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <div>{{m}}</div>
+        <div v-on:click='h1'>
+            <!-- stop阻止冒泡 -->
+            <button v-on:click.stop='h2'>按钮①</button>
+        </div>
+        <div>
+            <!-- prevent阻止默认行为         -->
+            <a href="http://www.weibo.com" v-on:click.prevent='h3'>百度</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#a',
+            data: {
+                m: 0
+            },
+            methods: {
+                h1: function () {
+                    this.m++
+                },
+                h2: function (event) {},
+                h3: function (event) {}
+            },
+        })
+    </script>
+</body>
+
+</html>

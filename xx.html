@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .a {
+        /* 转换为块级元素 */
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: #4BE491;
+        font-size: 20px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 50%  ;
+    }
+
+    .b {
+        /* 转换为行内元素 */
+        display: inline;
+        width: 100px;
+        height: 100px;
+        background: rebeccapurple;
+        font-size: 20px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 40%  ;
+    }
+
+    .c {
+        /* 转换为行内块元素 */
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: orange;
+        font-size: 20px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 50%  ;
+    }
+</style>
+
+<body>
+    <!-- 常见的块级元素有 DIV, FORM, TABLE, P, PRE, H1~H6, DL, OL, UL 等。 -->
+
+    <!-- 常见的内联元素有 SPAN, A, STRONG, EM, LABEL, INPUT, SELECT, TEXTAREA, IMG, BR 等。 -->
+
+    <!-- 常见的块级元素:<div></div> -->
+    <!-- <form action=""></form> -->
+    <!-- <table></table> -->
+    <!-- <p></p> -->
+    <!-- <pre></pre> -->
+    <!-- <h1-h6></h1-h6> -->
+    <!-- <dl></dl> -->
+    <!-- <ol></ol> -->
+    <!-- <ul></ul> -->
+
+    <!-- 常见的行内元素:<span></span> -->
+    <!-- <a href=""></a> -->
+    <!-- <strong></strong> -->
+    <!-- <em></em> -->
+    <!-- <label for=""></label> -->
+    <!-- <input type="text"> -->
+    <!-- <select name="" id=""></select> -->
+    <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+    <!-- <img src="" alt=""> -->
+    <!-- <br> -->
+    <div class="a">block</div>
+    <div class="b">inline</div>
+    <div class="c">inline-block</div>
+</body>
+
+</html>

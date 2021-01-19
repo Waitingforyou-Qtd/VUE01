@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <div>{{m}}</div>
+        <input type="text" v-bind:value='m' v-on:input='h'>
+        <input type="text" v-bind:value='m' v-on:input='msg=$event.target.value'>
+        <input type="text" v-model='m'>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#a',
+            data: {
+                m: 'hello!'
+            },
+            methods: {
+                h: function (event) {
+                    // 使用输入域
+                    this.m = event.target.value
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

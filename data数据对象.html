@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data:数据对象</title>
+</head>
+
+<body>
+    <h1 id="app">
+        {{message}}
+        <p style="color: chartreuse;">
+            {{school}}
+        </p>
+        <ul>
+            <li>{{cap[0]}} </li>
+            <li>{{cap[3]}} </li>
+        </ul>
+    </h1>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "您好!",
+                school: {
+                    name: "家里蹲大学",
+                    mobile: '0371-----'
+                },
+                cap: ["河南省", "驻马店市", "XXX","XXXX"]
+            }
+        })
+    </script>
+</body>
+
+</html>

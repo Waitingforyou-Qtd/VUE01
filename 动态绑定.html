@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 加了冒号属于动态绑定，会去 data 里面找 active 属性对应的值 -->
+        <!-- :  v-bind简写 -->
+        <p :class="active">hello world</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                active: 'active'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <!-- V K I 对象的值,键 ,下标 -->
+        <div v-if='v==20' v-for='(v,k,i) in obj'>{{v + '---' + k + '---' + i}}</div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        // js遍历对象
+        const obj = {
+            uname: 'zxx',
+            age: 22,
+            gender: "nv"
+        }
+        // 循环
+        for (var key in obj) {
+            // obj[key]对象里的值
+            console.log(key, obj[key]);
+        }
+
+        const vm = new Vue({
+            el: '#a',
+            data: {
+                obj: {
+                    uname: 'zx',
+                    age: 20,
+                    gender: 'nan'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

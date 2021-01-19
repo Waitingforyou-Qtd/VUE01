@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text指令</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- v-text指令作用:设置标签的内容(textContent) -->
+        <h1 v-text="message+'!!!'" style="color: chocolate;">嗷嗷嗷</h1>
+        <h1 v-text="aaa+'!!!'" style="color: chocolate;">嗷嗷嗷</h1>
+        <h1>{{message+'!!!'}}嗷嗷嗷</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "河南省",
+                aaa:"~~~"
+            }
+        })
+    </script>
+</body>
+
+</html>

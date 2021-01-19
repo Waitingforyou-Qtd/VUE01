@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='a'>
+        <!-- v-if  根据条件是否需要渲染到页面 -->
+        <div v-if='score>=90'>优秀</div>
+        <div v-else-if='score>=80'>良好</div>
+        <div v-else-if='score>=60'>一般</div>
+        <div v-else>尚需努力!</div>
+        <div v-show='flag'>测试v-show</div>
+        <button v-on:click='h'>按钮</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#a',
+            data: {
+                score: 9,
+                // flag决定是否显示/隐藏
+                flag: false
+            },
+            methods: {
+                h: function () {
+                    this.flag = !this.flag
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

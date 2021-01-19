@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <div>水果列表</div>
+        <ul>
+            <li v-for='item in fruits'>{{item}}</li>
+            <li v-for='(item, index) in fruits'>{{item + '----' + index}}</li>
+            <!-- 区分不同的元素 -->
+            <li :key='item.id' v-for='(item, index) in myFruits'>
+                <span>{{item.ename}}</span>
+                <span>----</span>
+                <span>{{item.cname}}</span>
+            </li>
+        </ul>q
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#a',
+            data: {
+                fruits: ['apple', 'orange', 'banana', 'tangerine', 'mango', 'jackfruit'],
+                myFruits: [{
+                    id: 1,
+                    ename: 'apple',
+                    cname: '苹果'
+                }, {
+                    id: 2,
+                    ename: 'orange',
+                    cname: '桔子'
+                }, {
+                    id: 3,
+                    ename: 'banana ',
+                    cname: '香蕉'
+                }, {
+                    id: 4,
+                    ename: 'tangerine',
+                    cname: '橘子'
+                }, {
+                    id: 5,
+                    ename: 'mango',
+                    cname: '芒果'
+                }, {
+                    id: 6,
+                    ename: 'jackfruit',
+                    cname: '菠萝蜜'
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue基础</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 模板语法   渲染到页面-->
+        {{ message }}
+    </div>
+    <!-- 引入vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 创建vue实例
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '您好!'
+            }
+        })
+    </script>
+</body>
+
+</html>

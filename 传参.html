@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 不加括号，定义函数的第一个参数就是事件对象 -->
+        <button v-on:click="handleClick1">按钮</button>
+        <!-- 加括号，需要通过 $event 来充当事件对象 -->
+        <button v-on:click="handleClick2(1234, $event, 64567)">按钮</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            methods: {
+                handleClick1(e) {
+                    console.log(e)
+                },
+                handleClick2(num1, e, num2) {
+                    console.log(e, num1 + num2)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

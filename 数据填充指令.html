@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <!-- 插入表达式 -->
+        <div>{{m}}</div>
+        <div v-text='m'></div>
+        <div v-html='m1'></div>
+        <div v-pre>{{m}}</div>
+    </div>
+    <script type="text/JavaScript" src="vue.js"></script>
+    <script type="text/JavaScript">
+        const vm = new Vue({
+            el:'#a',
+    data: {
+        m: 'Hello Vue!',
+        m1: '<h1>AAA</h1>'
+    },
+});
+    </script>
+</body>
+
+</html>

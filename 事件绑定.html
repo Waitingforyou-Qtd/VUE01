@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{n}}</div>
+        <div v-on:click='h0'>
+            <button v-on:click='h1'>按钮1</button>
+        </div>
+        <div>
+            <a href="http://www.baidu.com" v-on:click='h2'>百度</a>
+        </div>
+    </div>
+    <script type="text/JavaScript" src="vue.js"></script>
+    <script type="text/JavaScript">
+        var vm=new Vue({
+    el:'#app',
+    data:{
+        n:0
+    },
+    methods:{
+            h0:function() {
+                this.n++               
+            },
+            h1:function(event) {  
+                event.//阻止冒泡[DOM推荐标准(ie678不兼容)]
+                //ie678用cancelBubble = true
+                //兼容处理快捷键jr-zzmp/jr-stopPropagation
+                stopPropagation()          
+    },
+    h2:function(event) {
+       event.//阻止冒泡[DOM推荐标准(ie678不兼容)]
+       //ie678用cancelBubble = true
+       //兼容处理快捷键jr-zzmp/jr-stopPropagation
+       //阻止默认事件
+       //preventDefault()[dom标准写法(ie678不兼容)]
+       //ie678用returnValue
+       //或者利用return false也能阻止默认行为,没有兼容问题(只限传统注册方式)
+       preventDefault()
+    }
+}
+})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="i">
+            <!-- 左侧按钮 -->
+            <button @click='b'>
+                -
+            </button>
+            <span>{{n}}</span>
+            <!-- 右侧按钮 -->
+            <button @click='a'>
+                +
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 创建vue实例
+        var app = new Vue({
+            el: '#app',
+            data: {
+                n: 1
+            },
+            methods: {
+                a: function () {
+                    // console.log('a');
+                    if(this.n<10){
+                        this.n++;
+                    }else{
+                        alert('已经最大值!')
+                    }
+                    
+                },
+                b: function () {
+                    // console.log('b');
+                    if(this.n>0){
+                        this.n--;
+                    }else{
+                        alert('已经最小值!')
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

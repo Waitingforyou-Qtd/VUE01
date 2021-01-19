@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            background-color: red;
+        }
+    </style>
+
+<body>
+    <div id="b">
+        <!-- 如果bBar为true 返回的是a  否则返回的是空 -->
+        <p :class="bBar ? 'a' : ''">hello world</p>
+        <button @click="handleChange">change</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 需求：点击按钮，切换背景颜色
+        const vm = new Vue({
+            el: '#b',
+            data: {
+                bBar: true,
+                // bBar: false
+            },
+            methods: {
+                handleChange() {
+                    this.bBar = !this.bBar;
+                }
+            },
+        });
+    </script>
+</body>

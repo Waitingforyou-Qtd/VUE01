@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <div>水果列表</div>
+        <ul>
+            <li v-for='item in fruits' :key="k()+''">{{item}}</li>
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const k = () => {
+            let i = 0;
+            return () => {
+                return i++
+            }
+        }
+        const generatork = k()
+        const vm = new Vue({
+            el: '#a',
+            data: {
+                fruits: ['apple', 'orange', 'banana'],
+                k: generatork
+            }
+        })
+    </script>
+</body>
+
+</html>

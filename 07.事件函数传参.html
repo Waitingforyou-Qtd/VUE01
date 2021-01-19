@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="a">
+        <div>{{m}}</div>
+        <div>
+            <button v-on:click='h1'>按钮①</button>
+            <button v-on:click='h2(123,1223, $event)'>按钮②</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#a',
+            data: {
+                m: 0
+            },
+            methods: {
+                h1: function (event) {
+                    console.log(event.target.innerHTML);
+                },
+                h2: function (n, n1, event) {
+                    console.log(n, n1);
+                    console.log(event.target.innerHTML);
+                    this.m++;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

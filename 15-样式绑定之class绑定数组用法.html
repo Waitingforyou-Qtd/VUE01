@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .ac {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            border-radius: 30%;
+        }
+
+        .er {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="a">
+        <div v-bind:class='[acClass, erClass]'>测试样式</div>
+        <!-- v-on 监听dom事件 -->
+        <button v-on:click='h'>切换</button>
+    </div>
+    <script type="text/javascript" src="./vue.js"></script>
+    <script type="text/javascript">
+        /*
+      样式绑定
+
+    */
+        var vm = new Vue({
+            el: '#a',
+            data: {
+                acClass: 'ac',
+                erClass: 'er'
+            },
+            methods: {
+                h: function () {
+                    this.acClass = '';
+                    this.erClass = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

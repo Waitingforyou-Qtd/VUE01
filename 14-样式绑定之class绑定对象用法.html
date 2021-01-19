@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .ac {
+            border: 10px solid red;
+            width: 100px;
+            height: 100px;
+            border-radius: 30%;
+        }
+
+        .er {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="a">
+        <div v-bind:class="{ac: isAc,er: isEr}">
+            测试样式
+        </div>
+        <button v-on:click='h'>切换</button>
+    </div>
+    <script type="text/javascript" src="./vue.js"></script>
+    <script type="text/javascript">
+        /*
+      样式绑定
+
+    */
+        var vm = new Vue({
+            el: '#a',
+            data: {
+                // 设置为true
+                isAc: true,
+                isEr: true
+            },
+            methods: {
+                h: function () {
+                    // 控制isActive的值在true和false之间进行切换
+                    this.isAc = !this.isAc;
+                    this.isEr = !this.isEr;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

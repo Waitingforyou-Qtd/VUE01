@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="v-on指令" v-on:click='an'>
+        <input type="button" value="v-on简写" @click='an'>
+        <input type="button" value="v-on双击" @dblclick='an'>
+        <h1 @click="changeFood" style="cursor: pointer;color: rgb(255, 179, 0);">{{food}}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 创建vue实例
+        var app = new Vue({
+            el: '#app',
+            data: {
+                food: "河南烩面"
+            },
+            methods: {
+                an: function () {
+                    alert('欢迎您!')
+                },
+                changeFood: function () {
+                    // console.log(this.food);
+                    this.food += '很好吃!'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
